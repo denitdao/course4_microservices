@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<knives>
+    <knife id="kn15e" type="KNIFE">
+        <origin>Ukraine</origin>
+        <handy>ONE_HANDED</handy>
+        <visual>
+            <length>11.5</length>
+            <width>24</width>
+            <material>Ceramic</material>
+            <handle kind="cedar">Wood</handle>
+            <hasBloodChannel>false</hasBloodChannel>
+        </visual>
+        <value collectible="false">35.40</value>
+    </knife>
+    <knife id="kat16a" type="KATANA">
+        <origin>Japan</origin>
+        <handy>TWO_HANDED</handy>
+        <visual>
+            <length>65.9</length>
+            <width>28</width>
+            <material>Steel</material>
+            <handle>Leather</handle>
+            <hasBloodChannel>true</hasBloodChannel>
+        </visual>
+        <value collectible="true">1255.40</value>
+    </knife>
+    <knife id="machte2le" type="MACHETE">
+        <origin>Mexico</origin>
+        <handy>ONE_HANDED</handy>
+        <visual>
+            <length>31.2</length>
+            <width>42</width>
+            <material>Metal</material>
+            <handle>Plastic</handle>
+            <hasBloodChannel>false</hasBloodChannel>
+        </visual>
+        <value collectible="false">169.9</value>
+    </knife>
+    <knife id="bays5lma" type="BAYONET">
+        <origin>Germany</origin>
+        <handy>ONE_HANDED</handy>
+        <visual>
+            <length>31.2</length>
+            <width>13</width>
+            <material>Gold</material>
+            <handle kind="pine">Wood</handle>
+            <hasBloodChannel>true</hasBloodChannel>
+        </visual>
+        <value collectible="true">12364.2</value>
+    </knife>
+</knives>
