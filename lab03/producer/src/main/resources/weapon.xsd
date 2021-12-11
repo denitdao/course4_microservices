@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="knife" type="knifeType"/>
+
+    <xsd:complexType name="knifeType">
+        <xsd:sequence>
+            <xsd:element name="origin" type="xsd:string"/>
+            <xsd:element name="handy" type="handyType"/>
+            <xsd:element name="visual" type="visualType"/>
+            <xsd:element name="value" type="valueType"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:string" use="required"/>
+        <xsd:attribute name="type" type="knifeTypeParamType" use="required"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="knifeTypeParamType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="KNIFE"/>
+            <xsd:enumeration value="BAYONET"/>
+            <xsd:enumeration value="MACHETE"/>
+            <xsd:enumeration value="SWORD"/>
+            <xsd:enumeration value="KATANA"/>
+            <xsd:enumeration value="RAPIER"/>
+            <xsd:enumeration value="SABER"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="handyType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ONE_HANDED"/>
+            <xsd:enumeration value="TWO_HANDED"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="visualType">
+        <xsd:sequence>
+            <xsd:element name="length" type="doubleMoreThanTenType"/>
+            <xsd:element name="width" type="intMoreThanTenType"/>
+            <xsd:element name="material" type="xsd:string"/>
+            <xsd:element name="handle" type="handleType"/>
+            <xsd:element name="hasBloodChannel" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="handleType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="kind" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="valueType">
+        <xsd:simpleContent>
+            <xsd:extension base="doubleMoreThanZeroType">
+                <xsd:attribute name="collectible" type="xsd:boolean" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+
+    <xsd:simpleType name="doubleMoreThanZeroType">
+        <xsd:restriction base="xsd:double">
+            <xsd:minExclusive value="0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="doubleMoreThanTenType">
+        <xsd:restriction base="xsd:double">
+            <xsd:minExclusive value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="intMoreThanTenType">
+        <xsd:restriction base="xsd:int">
+            <xsd:minExclusive value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>
+<!--
+
+<knives>
+    <knife id="kn15e" type="KNIFE">
+        <origin>Ukraine</origin>
+        <handy>ONE_HANDED</handy>
+        <visual>
+            <length>11.5</length>
+            <width>24</width>
+            <material>Ceramic</material>
+            <handle kind="cedar">Wood</handle>
+            <hasBloodChannel>false</hasBloodChannel>
+        </visual>
+        <value collectible="false">35.40</value>
+    </knife>
+</knives>
+
+-->
